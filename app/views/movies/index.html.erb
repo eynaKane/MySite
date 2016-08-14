@@ -1,0 +1,23 @@
+<div class="movies" id="movies">
+  <div class="container" id="container">
+    <h1 class="movies" id="movies">Movies</h1>
+  </div>
+</div>
+
+<div class="main" id="main">
+  <div class="container" id="container">
+    <table>
+      <% @movies.each do |m| %>
+      <div class="movie">
+        <tr>
+          <td><img src=<%= m.image %> alt=""></td>
+          <td>
+            <h2><%= m.title %> (<%= m.release_year %>)</h2>
+            <%= link_to "Learn more", movie_path(m) %>
+          </td>
+        </tr>
+      </div>
+      <% end %>
+    </table>
+  </div>
+</div>

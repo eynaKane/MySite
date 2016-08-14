@@ -1,0 +1,35 @@
+<div class="movies" id="movies">
+  <div class="container" id="container">
+    <h1 class="movies" id="movies">Movie and Actors</h1>
+  </div>
+</div>
+
+<div class="main">
+  <div class="container">
+    <img src="<%= @movie.image %>" alt="">
+    <h2><%= @movie.title %> (<%= @movie.release_year %>)</h2>
+  </div>
+</div>
+
+<div class="cast">
+  <div class="container">
+    <h2>Cast</h2>
+    <div>
+      <% @actors.each do |a| %>
+        <div>
+          <table>
+            <tr>
+            <td><img src="<%= a.image %>" alt=""></td>
+            <td>
+              <h3><%= a.first_name %> <%= a.last_name %></h3>
+              <h4><%= a.bio %></h4>
+              <%= link_to "Learn more", actor_path(a) %>
+            </td>
+          </tr>
+          </table>
+        </div>
+      <% end %>
+      <%= link_to "Back", :back %>
+    </div>
+  </div>
+</div>

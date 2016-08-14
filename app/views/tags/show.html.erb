@@ -1,0 +1,23 @@
+<div class="header">
+  <div class="container">
+    <h1>Tag's Destinations</h1>
+  </div>
+</div>
+
+<div class="tag_destinations">
+  <div class="container">
+    <h2><%= @tag.title %></h2>
+    <div>
+      <% @destinations.each do |d| %>
+        <h3><%= d.name %></h3>
+        <div>
+          <img src=<%= d.image %> alt="">
+          <%= d.description %>
+        </div>
+        <%= link_to "Show more...", destination_path(d) %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div><%= link_to 'Back', tags_path %></div>

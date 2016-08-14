@@ -1,0 +1,16 @@
+<div class="header">
+  <div class="container">
+    <h1>Destination</h1>
+  </div>
+</div>
+
+<div class="edit_destination">
+  <div class="container">
+    <%= form_for @destination do |f| %>
+      <div><%= f.text_field :name %> </div> <br>
+      <div><%= f.text_area :description %></div>
+      <%= f.submit "Update", :disable_with => 'Updating...' %>
+    <% end %>
+  </div>
+  <%= link_to "Back", :back %>
+</div>

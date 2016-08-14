@@ -1,0 +1,19 @@
+<div class="header">
+  <div class="container">
+    <h1>Destination</h1>
+  </div>
+</div>
+
+<div class="destination">
+  <div class="container">
+    <li class="destination_name"><%= @destination.name %></li>
+    <ul>
+      <li class="destination_description"> <%= @destination.description %></li> <br>
+      <div class="destination_image"><img src=<%= @destination.image %> alt=""></div>
+      <div class="destination_update">
+        <%= link_to "Update", :action => "edit" %>
+      </div>
+    </ul>
+    <%= link_to "Back", :back %>
+  </div>
+</div>

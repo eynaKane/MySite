@@ -1,0 +1,21 @@
+<div class="header">
+  <div class="container">
+    <h1>Tags</h1>
+  </div>
+</div>
+
+<div class="tags">
+  <div class="container">
+    <div>
+      <% @tags.each do |t| %>
+        <div>
+          <li><h2 class="title"><%= t.title %></h2></li>
+          <ul>
+            <li><img src=<%= t.image %>></li>
+            <li><%= link_to "Learn more", tag_path(t) %></li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
