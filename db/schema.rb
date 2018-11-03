@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,54 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160814011337) do
+ActiveRecord::Schema.define(version: 2016_08_14_011337) do
 
   create_table "actors", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "image"
-    t.string   "bio"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "image"
+    t.string "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "destinations", force: :cascade do |t|
-    t.string   "name"
-    t.string   "image"
-    t.string   "description"
-    t.integer  "tag_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string "name"
+    t.string "image"
+    t.string "description"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_id"], name: "index_destinations_on_tag_id"
   end
 
   create_table "messages", force: :cascade do |t|
-    t.text     "content"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "movies", force: :cascade do |t|
-    t.string   "title"
-    t.string   "image"
-    t.string   "release_year"
-    t.string   "plot"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  create_table "parts", force: :cascade do |t|
-    t.integer  "actor_id"
-    t.integer  "movie_id"
+    t.string "title"
+    t.string "image"
+    t.string "release_year"
+    t.string "plot"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "parts", ["actor_id"], name: "index_parts_on_actor_id"
-  add_index "parts", ["movie_id"], name: "index_parts_on_movie_id"
+  create_table "parts", force: :cascade do |t|
+    t.integer "actor_id"
+    t.integer "movie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_id"], name: "index_parts_on_actor_id"
+    t.index ["movie_id"], name: "index_parts_on_movie_id"
+  end
 
   create_table "tags", force: :cascade do |t|
-    t.string   "title"
-    t.string   "image"
+    t.string "title"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
